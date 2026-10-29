@@ -31,10 +31,10 @@ function App() {
           path="/products"
           element={<Products products={products} addToCart={addToCart} />}
         />
-        <Route
-          path="/:id"
-          element={<Product products={products} />}
-        />
+     <Route
+  path="/:id"
+  element={<Product products={products} />}
+/>
         <Route
           path="/cart"
           element={<h2>Cart items: {cart.length}</h2>}

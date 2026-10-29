@@ -1,5 +1,5 @@
 
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 
 function Product({ products }) {
   const { id } = useParams();
@@ -13,16 +13,24 @@ function Product({ products }) {
   }
 
   return (
-    <div className="product-details">
-      <img src={product.image} alt={product.title} />
-
+    <>
       <div>
-        <h2>{product.title}</h2>
-        <h3>${product.price.toFixed(2)}</h3>
-        <p>{product.description}</p>
-        <p>Category: {product.category}</p>
+        <Link to="/products" className="back-button">
+          Back to Products
+        </Link>
       </div>
-    </div>
+
+      <div className="product-details">
+        <img src={product.image} alt={product.title} />
+
+        <div>
+          <h2>{product.title}</h2>
+          <h3>${product.price.toFixed(2)}</h3>
+          <p>{product.description}</p>
+          <p>Category: {product.category}</p>
+        </div>
+      </div>
+    </>
   );
 }
 
